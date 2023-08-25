@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Loader</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container,
+        .background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 200px;
+            width: 320px;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .container div {
+            z-index: 1;
+        }
+
+        .container div,
+        .background div {
+            width: 80px;
+            height: 200px;
+            background-color: #f2f2f2;
+        }
+
+        .container div:nth-child(1),
+        .container div:nth-child(2),
+        .container div:nth-child(3) {
+            animation: animation 1s linear infinite;
+        }
+
+        .background div:nth-child(1),
+        .background div:nth-child(2),
+        .background div:nth-child(3) {
+            background: linear-gradient(-45deg, #ED3A28, #D647E0, #5A40ED);
+        }
+
+        .container div:nth-child(2) {
+            animation-delay: .1s;
+        }
+
+        .container div:nth-child(3) {
+            animation-delay: .2s;
+        }
+
+        @keyframes animation {
+            0% {
+                transform: translateY(00%)
+            }
+
+            40% {
+                transform: translateY(0%)
+            }
+
+            50% {
+                transform: translateY(-20%);
+            }
+
+            60% {
+                transform: translateY(0%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+
+</html>
